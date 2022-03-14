@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/styles';
 import {AppBar, Toolbar, Button, Avatar, Typography} from '@mui/material';
-import imgSrc from "../image/me_avater.JPG";
+import imgSrc from "../image/me_avatar.jpeg";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import { Link } from "react-router-dom";
 
 const theme = createTheme();
-
 
 const useStyles = makeStyles({
     root: {
@@ -54,7 +53,7 @@ function NavBar(){
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                <Button href="#"><Avatar src={imgSrc} className={classes.menuButton}/></Button>
+                <Link to='/'><Avatar src={imgSrc} className={classes.menuButton}/></Link>
                 <Typography variant="h6" className={classes.title}>
                     網路攻防實習
                 </Typography>
@@ -63,13 +62,12 @@ function NavBar(){
                 </Typography>
                 <button onClick={handleClick}>addCnt</button>
                 <nav className={classes.toolbarTitle}>
-                    <Link to="chat">聊天室</Link>
-                    </nav>
-                <Button color="inherit">Login</Button>
+                    <Link to="/chat">聊天室</Link>
+                </nav>
+                <Link color="inherit" to='/login'>Login</Link>
                 </Toolbar>
             </AppBar>
         </div>
     );
 };
 export default NavBar;
-

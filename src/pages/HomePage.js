@@ -1,12 +1,13 @@
 import React from "react";
 import {Grid, Typography} from '@mui/material';
 import { makeStyles } from '@material-ui/styles';
-import imgSrc from "../image/me.JPG";
+import imgSrc from "../image/me.jpeg";
+import { createTheme } from '@mui/material/styles';
 
-
-const useStyle = makeStyles(theme => ({
+const theme = createTheme();
+const useStyle = makeStyles({
   root: {
-    backgroundColor: theme.palette.background,
+    backgroundColor: theme.palette.background.paper,
     flexGrow: 1,
     minHeight: "100vh",
   },
@@ -24,7 +25,6 @@ const useStyle = makeStyles(theme => ({
         transform: "scale(1.1)"
       }
     }
-
   },
   aboutTxt: {
     color: theme.palette.primary.main,
@@ -46,10 +46,9 @@ const useStyle = makeStyles(theme => ({
       fontSize: theme.typography.pxToRem(50),
       lineHeight: theme.typography.pxToRem(50),
     },
-
     display: "block"
   },
-}));
+});
 
 function HomePage() {
   const classes = useStyle();
@@ -58,21 +57,19 @@ function HomePage() {
   return (
     <div className={classes.root}>
         <Grid container direction="row" justify="space-between" alignItems="center" style={{minHeight: "100vh"}}>
-                <Grid item xs={6} md={5}>
-                    <div className={classes.imageDiv}>
-                    <img className={classes.centerCropped}
-                        src={imgSrc}
-                        alt="thumbnail"/>
-                    </div>
-                </Grid>
-                <Grid item xs={6} md={7}>
-                    <Typography gutterBottom className={classes.heading}>
-                        About Me
-                    </Typography>
-                    <Typography paragraph className={classes.aboutTxt}>
-                        我是就讀台大經濟系的鄭亦辰 Euni，之後會開始就讀資管所。
-                    </Typography>
-                </Grid>
+          <Grid item xs={6} md={5}>
+              <div className={classes.imageDiv}>
+                <img className={classes.centerCropped} src={imgSrc} alt="thumbnail"/>
+              </div>
+          </Grid>
+          <Grid item xs={6} md={7}>
+              <Typography gutterBottom className={classes.heading}>
+                  About Me
+              </Typography>
+              <Typography paragraph className={classes.aboutTxt}>
+                  我是資管所碩一的 Euni。
+              </Typography>
+          </Grid>
         </Grid>
     </div>
   )
