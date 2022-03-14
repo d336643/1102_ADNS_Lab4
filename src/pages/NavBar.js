@@ -53,7 +53,7 @@ function NavBar(){
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                <Link to='/'><Avatar src={imgSrc} className={classes.menuButton}/></Link>
+                <Link to='/~r10725032/'><Avatar src={imgSrc} className={classes.menuButton}/></Link>
                 <Typography variant="h6" className={classes.title}>
                     網路攻防實習
                 </Typography>
@@ -62,9 +62,9 @@ function NavBar(){
                 </Typography>
                 <button onClick={handleClick}>addCnt</button>
                 <nav className={classes.toolbarTitle}>
-                    <Link to="/chat">聊天室</Link>
+                    <Link to="/~r10725032/chat">聊天室</Link>
                 </nav>
-                <Link color="inherit" to='/login'>Login</Link>
+                <Link color="inherit" to='/~r10725032/login'>Login</Link>
                 </Toolbar>
             </AppBar>
         </div>
